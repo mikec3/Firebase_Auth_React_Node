@@ -54,4 +54,6 @@ Get configuration details
 Get admin key file, save as a variable in .env file (eliminate whitespace line breaks so that
 .env file reads the whole secret key file as one string)
 
+add .env file to .gitignore file
+
 Go to Auth - enable e-mail & Password sign in
