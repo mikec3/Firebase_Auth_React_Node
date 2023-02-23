@@ -32,7 +32,7 @@ function LoggedIn(props) {
 
 		axios(config)
 		.then((response) => {
-			console.log(JSON.stringify(response))
+			//console.log(JSON.stringify(response))
 			if (response != 'error') {
 			// if user theme update is successful, set the theme here.
 			setUserTheme(response.data);
