@@ -57,3 +57,5 @@ Get admin key file, save as a variable in .env file (eliminate whitespace line b
 add .env file to .gitignore file
 
 Go to Auth - enable e-mail & Password sign in
+
+API config & key is in client, set API permissions to restrict to either domain or IP.
