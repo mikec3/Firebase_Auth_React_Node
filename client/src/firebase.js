@@ -26,6 +26,18 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+
+const googleProvider = new GoogleAuthProvider();
+const signInWithGoogle = async () => {
+  try {
+    const res = await signInWithPopup(auth, googleProvider);
+    return res.user;
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     const res = await signInWithEmailAndPassword(auth, email, password);
@@ -68,7 +80,7 @@ const updateDisplayName = async (displayName) => {
 export {
   auth,
   //db,
-  //signInWithGoogle,
+  signInWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   logout,

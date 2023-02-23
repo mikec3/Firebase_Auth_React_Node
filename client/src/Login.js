@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {  logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset} from './firebase'
+import {signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset} from './firebase'
 
 
 function Login(props) {
@@ -9,13 +9,25 @@ function Login(props) {
 		event.preventDefault();
 		logInWithEmailAndPassword(event.target.email.value, event.target.password.value)
 		.then((response)=> {
-			console.log(response);
+			//console.log(response);
 			// pass user up to parent component
 			props.passUpUser(response);
 		})
 	}
 
+	const loginWithgoogle = () => {
+		signInWithGoogle()
+		.then((response)=> {
+			//console.log(response);
+			// pass user up to parent component
+			props.passUpUser(response);
+		})
+	}
+
+
+
 return (
+			<div>
 				<div>
 					<h3> Login </h3>
 					<form onSubmit={loginFormSubmitHandler}>
@@ -24,6 +36,10 @@ return (
 						<button type="Submit"> Login </button>
 					</form>
 				</div>
+				<div>
+					<button onClick={loginWithgoogle}> Login with Google </button>
+				</div>
+			</div>
 		)
 }
 

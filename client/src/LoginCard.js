@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {  logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, getCurrentUser} from './firebase'
 import SignUp from './SignUp'
 import Login from './Login'
 import LoggedIn from './LoggedIn'

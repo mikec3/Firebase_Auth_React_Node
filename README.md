@@ -1,6 +1,7 @@
 # Firebase Auth
 
 this app showcases a basic example of using firebase for auth in a react/node application.
+roughly follows this tutorial: https://blog.logrocket.com/user-authentication-firebase-react-apps/
 
 ##### deployment and api secrets
 * https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/

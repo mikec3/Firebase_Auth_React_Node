@@ -118,8 +118,14 @@ app.post("/api/getUserTheme", async function(req, res) {
 		const docRef = db.collection('users').doc(decodedToken.uid);
 		docRef.get()
 		.then(result=>{
-			console.log(result.data().theme);
-			res.json(result.data().theme);
+			// if there's a result, pass it back to client, otherwise pass null
+			if (result.data()) {
+				console.log(result);
+				console.log(result.data().theme);
+				res.json(result.data().theme);
+			} else {
+				res.json();
+			}
 		})
 		.catch(error=>{
 			console.log(error);
