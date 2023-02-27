@@ -1,4 +1,6 @@
+import {useContext} from 'react'
 import { initializeApp } from "firebase/app";
+import {useUserDispatch} from './UserContext'
 import {
   GoogleAuthProvider,
   getAuth,
@@ -6,11 +8,13 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
-  updateProfile
+  updateProfile,
+  onAuthStateChanged
 } from "firebase/auth";
 
   // Your web app's Firebase configuration
   // This is apparently safe to upload to VC and web because api permissions are set in firebase console. Approve list IP or domains.
+  // for example : IP restriction could be something like 2601:601::/32 (match the first 32 bits of IP)
   // https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public
   //https://console.cloud.google.com/apis/credentials?project=fir-auth-deaa9
   const firebaseConfig = {
@@ -26,6 +30,21 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const AuthStateChanged = async () => {
+
+  const userDispatch = useUserDispatch();
+  auth.onAuthStateChanged((user)=>{
+    if (user){
+      console.log(user);
+      userDispatch({
+        type: 'changed',
+        user: user
+      })
+    } else {
+      console.log('no user');
+    }
+  })
+}
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -85,5 +104,6 @@ export {
   registerWithEmailAndPassword,
   logout,
   getCurrentUser,
-  updateDisplayName
+  updateDisplayName,
+  AuthStateChanged
 };

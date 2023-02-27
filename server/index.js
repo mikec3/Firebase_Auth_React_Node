@@ -111,8 +111,9 @@ const uploadUserTheme = async function (uid, theme) {
 // api for getting user theme
 app.post("/api/getUserTheme", async function(req, res) {
 	console.log('api/getUserTheme called');
+	console.log(req.body.user.stsTokenManager);
 	console.log(req.body.user.accessToken);
-	auth.verifyIdToken(req.body.user.accessToken)
+	auth.verifyIdToken(req.body.user.stsTokenManager.accessToken)
 	.then((decodedToken)=> {
 		// get and return theme
 		const docRef = db.collection('users').doc(decodedToken.uid);

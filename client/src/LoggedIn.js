@@ -16,6 +16,7 @@ function LoggedIn(props) {
 	}, [props.user])
 
 	const getUserTheme = async () => {
+		console.log(props.user);
 		let data = JSON.stringify({
 			"user": props.user,
 		})

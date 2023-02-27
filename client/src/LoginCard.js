@@ -3,9 +3,17 @@ import axios from 'axios'
 import SignUp from './SignUp'
 import Login from './Login'
 import LoggedIn from './LoggedIn'
+import {useUser} from './UserContext'
 
 
 function LoginCard(props) {
+
+	const userCont = useUser();
+
+	useEffect(()=>{
+		setUser(userCont);
+
+	}, [userCont])
 
 	// current logged in user state
 	const [user, setUser] = useState();

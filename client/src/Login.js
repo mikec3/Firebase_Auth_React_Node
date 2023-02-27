@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset} from './firebase'
+import React, {useEffect, useState, useContext} from 'react'
+import {signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, AuthStateChanged} from './firebase'
 
 
-function Login(props) {
-
+function Login (props) {
 
 	const loginFormSubmitHandler = (event) => {
 		event.preventDefault();
@@ -23,6 +22,9 @@ function Login(props) {
 			props.passUpUser(response);
 		})
 	}
+
+// triggers firebase.js to check for a logged in user, will send user to UserContext if present
+AuthStateChanged();
 
 
 
