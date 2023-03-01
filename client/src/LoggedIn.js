@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {logout, updateDisplayName} from './firebase'
+import {logout, UpdateDisplayName} from './firebase'
+import {useUser} from './UserContext'
 
 
 function LoggedIn(props) {
@@ -47,14 +48,13 @@ function LoggedIn(props) {
 	}
 
 	const handleLogOutButtonPress = async () => {
-		// logout should return null, therefore setUser will set to null.
-		props.passUpUser(await logout());
+		logout();
 	}
 
 	const nameChangeFormSubmit = async (event) => {
 		event.preventDefault();
-		
-		let currUser = await updateDisplayName(event.target.name.value);
+
+		let currUser = await UpdateDisplayName(event.target.name.value);
 		props.passUpUser(currUser);
 	}
 

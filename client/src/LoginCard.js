@@ -8,6 +8,9 @@ import {useUser} from './UserContext'
 
 function LoginCard(props) {
 
+		// current logged in user state
+	const [user, setUser] = useState();
+
 	const userCont = useUser();
 
 	useEffect(()=>{
@@ -15,11 +18,7 @@ function LoginCard(props) {
 
 	}, [userCont])
 
-	// current logged in user state
-	const [user, setUser] = useState();
-	const [displayName, setDisplayName] = useState();
-
-	// receives the user during register/login
+	// receives the user during display name change
 	// setting user using destructuring so that shallow equality check of react engine triggers re-render of componenets looking at user object
 	const passUpUser = (user) => {
 		if (!user){
@@ -36,9 +35,9 @@ return (
 		}
 		{!user &&
 			<div>
-				<Login passUpUser={passUpUser}/>
+				<Login/>
 				<h2> Or </h2>
-				<SignUp passUpUser={passUpUser}/>
+				<SignUp/>
 			</div>
 		}
 	</div>);

@@ -72,7 +72,7 @@ app.post("/api/updateUserTheme", async function(req, res) {
 	console.log('api/updateUserTheme called');
 
 	// validate token
-	auth.verifyIdToken(req.body.user.accessToken)
+	auth.verifyIdToken(req.body.user.stsTokenManager.accessToken)
 	.then((decodedToken)=> {
 		//console.log(decodedToken.uid);
 

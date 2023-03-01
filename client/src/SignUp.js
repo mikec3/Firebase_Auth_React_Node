@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {registerWithEmailAndPassword} from './firebase'
 
 
@@ -8,12 +8,6 @@ function SignUp(props) {
 	const createAccountFormSubmitHandler = (event) => {
 		event.preventDefault();
 		registerWithEmailAndPassword(event.target.email.value, event.target.password.value)
-		.then((response)=> {
-			//console.log(response);
-
-			// pass up user to parent component
-			props.passUpUser(response);
-		})
 	}
 
 return (

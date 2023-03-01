@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+//import {useContext} from 'react'
 import { initializeApp } from "firebase/app";
 import {useUserDispatch} from './UserContext'
 import {
@@ -42,6 +42,10 @@ const AuthStateChanged = async () => {
       })
     } else {
       console.log('no user');
+      userDispatch({
+        type: 'changed',
+        user: null
+      })
     }
   })
 }
@@ -88,7 +92,7 @@ const getCurrentUser = async () => {
   return auth.currentUser;
 }
 
-const updateDisplayName = async (displayName) => {
+const UpdateDisplayName = async (displayName) => {
   await updateProfile(auth.currentUser, {
     displayName: displayName
   });
@@ -104,6 +108,6 @@ export {
   registerWithEmailAndPassword,
   logout,
   getCurrentUser,
-  updateDisplayName,
+  UpdateDisplayName,
   AuthStateChanged
 };
