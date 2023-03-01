@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
-import {signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, AuthStateChanged} from './firebase'
+import {signInWithGoogle, logInWithEmailAndPassword, AuthStateChanged} from './firebase'
 
 
 function Login (props) {

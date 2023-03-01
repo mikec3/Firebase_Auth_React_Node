@@ -38,9 +38,6 @@ const db = getFirestore();
 // api for creating an account, send email & password to firebase, returns user
 app.post("/api/createAccount", async function(req, res){
 	console.log('api/createAccount has been called');
-	console.log(req.body);
-	console.log(req.body.email);
-	console.log(req.body.password);
 
 // return the parcel list to client
 let firebaseResponse = await sendAccountToFirebase(req.body.email, req.body.password);
@@ -111,8 +108,6 @@ const uploadUserTheme = async function (uid, theme) {
 // api for getting user theme
 app.post("/api/getUserTheme", async function(req, res) {
 	console.log('api/getUserTheme called');
-	console.log(req.body.user.stsTokenManager);
-	console.log(req.body.user.accessToken);
 	auth.verifyIdToken(req.body.user.stsTokenManager.accessToken)
 	.then((decodedToken)=> {
 		// get and return theme

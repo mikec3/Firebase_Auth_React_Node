@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {  logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, updateDisplayName} from './firebase'
+import {logout, updateDisplayName} from './firebase'
 
 
 function LoggedIn(props) {
@@ -16,7 +16,7 @@ function LoggedIn(props) {
 	}, [props.user])
 
 	const getUserTheme = async () => {
-		console.log(props.user);
+		//console.log(props.user);
 		let data = JSON.stringify({
 			"user": props.user,
 		})

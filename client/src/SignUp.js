@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {  logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset} from './firebase'
+import {registerWithEmailAndPassword} from './firebase'
 
 
 function SignUp(props) {
