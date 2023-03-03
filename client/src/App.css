@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+.App{
+  background-image: url('https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg');
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #170e18;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.LoginCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  max-width: 60%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 2em;
+  border: 0.1em solid #170e18;
+  padding-left: 1em;
+  margin-bottom: 0.35em;
+}
+
+button {
+  height: 2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.75em;
+  width: 100%;
+  background-color: white;
+  border: 0.1em solid #170e18;
+}
+
+.GoogleButton {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #d62516;
 }

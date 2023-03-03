@@ -12,10 +12,9 @@ function SignUp(props) {
 
 return (
 				<div>
-					<h3> Create Account </h3>
 					<form onSubmit={createAccountFormSubmitHandler}>
-						<p> E-mail </p> <input type='text' id='email'/>
-						<p> Password </p> <input type='text' id='password'/>
+						<input type='text' id='email' placeholder='E-mail'/>
+						<input type='text' id='password' placeholder='Password'/>
 						<button type="Submit"> Create Account </button>
 					</form>
 				</div>

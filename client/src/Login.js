@@ -21,15 +21,15 @@ AuthStateChanged();
 return (
 			<div>
 				<div>
-					<h3> Login </h3>
+					<h2> Firebase Auth </h2>
 					<form onSubmit={loginFormSubmitHandler}>
-						<p> E-mail </p> <input type='text' id='email'/>
-						<p> Password </p> <input type='text' id='password'/>
+						<input type='text' id='email' placeholder='E-mail'/>
+						<input type='text' id='password' placeholder='Password'/>
 						<button type="Submit"> Login </button>
 					</form>
 				</div>
 				<div>
-					<button onClick={loginWithgoogle}> Login with Google </button>
+					<button className='GoogleButton' onClick={loginWithgoogle}> Sign in with Google+ </button>
 				</div>
 			</div>
 		)

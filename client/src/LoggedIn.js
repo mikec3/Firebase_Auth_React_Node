@@ -92,14 +92,14 @@ function LoggedIn(props) {
 
 return (
 			<div>
-				<p> Welcome {props.user.displayName} </p>
-				<p> Your theme is {userTheme} </p>
+				<h3> Welcome {props.user.displayName} </h3>
+				<h3> Your theme is {userTheme} </h3>
 					<form onSubmit={nameChangeFormSubmit}>
-						<p> New Display Name </p> <input type='text' id='name'/>
+						<input type='text' id='name' placeholder='New Display Name'/>
 						<button type="Submit"> Change Display Name </button>
 					</form>
 					<form onSubmit={updateUserThemeHandler}>
-						<p> New Theme </p> <input type='text' id='theme'/>
+						<input type='text' id='theme' placeholder='New Theme'/>
 						<button type="Submit"> Change Theme </button>
 					</form>
 				<button onClick={handleLogOutButtonPress}> Log Out </button>

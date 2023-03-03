@@ -29,16 +29,16 @@ function LoginCard(props) {
 	}
 
 return (
-	<div>
+	<div className='LoginCard'>
 		{user && 
 			<LoggedIn user={user} passUpUser={passUpUser}/>
 		}
 		{!user &&
-			<div>
+			<React.Fragment>
 				<Login/>
 				<h2> Or </h2>
 				<SignUp/>
-			</div>
+			</React.Fragment>
 		}
 	</div>);
 }
